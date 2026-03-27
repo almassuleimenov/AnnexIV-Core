@@ -61,31 +61,40 @@ AnnexIV-Solana-Core/
 ├── 3_frontend_dashboard/ # ДЕМО: Визуализация Trust Score и аудит-трейла.
 ├── 4_sensor_go/          # СЕНСОР: Высокоскоростной захват телеметрии (Golang).
 └── README.md             # Техническая документация
-6. Quick Start & Installation ⚙️
+```
+## 6. Quick Start & Installation ⚙️
 Развертывание системы автоматизированного комплаенса выполняется в четыре этапа:
 
 1. Подготовка среды:
 
 Bash
+```
 git clone https://github.com/Sulemenov/AnnexIV-Solana-Core.git
 cd AnnexIV-Solana-Core
+```
 2. Сборка смарт-контракта (Anchor):
 
 Bash
+```
 cd 1_solana_program
 anchor build
+```
 3. Инициализация ИИ-сервиса:
 
 Bash
+```
 cd ../2_backend_ai
 pip install -r requirements.txt
 uvicorn main:app --reload
+```
 4. Запуск интерфейса:
 
 Bash
+```
 cd ../3_frontend_dashboard
 npm install
 npm run dev
+```
 7. Compliance Standard: Соответствие Annex IV 🇪🇺
 Проект напрямую реализует требования к технической документации, изложенные в Annex IV EU AI Act:
 
