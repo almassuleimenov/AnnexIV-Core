@@ -69,8 +69,8 @@ AnnexIV-Solana-Core/
 
 Bash
 ```
-git clone https://github.com/Sulemenov/AnnexIV-Solana-Core.git
-cd AnnexIV-Solana-Core
+git clone https://github.com/almassuleimenov/AnnexIV-Core.git
+cd AnnexIV-Core
 ```
 2. Сборка смарт-контракта (Anchor):
 
