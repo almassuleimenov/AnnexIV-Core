@@ -1,0 +1,14 @@
+# Solana & Rust build artifacts
+target/
+test-ledger/
+*.tar.bz2
+solana-release/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Node.js
+node_modules/
