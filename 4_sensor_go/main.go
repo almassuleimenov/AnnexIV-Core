@@ -9,50 +9,51 @@ import (
 	"time"
 )
 
-// Структура должна точно совпадать с Pydantic схемой в FastAPI
 type TelemetryLog struct {
 	ModelID    string                 `json:"model_id"`
 	Timestamp  string                 `json:"timestamp"`
 	Metrics    map[string]interface{} `json:"metrics"`
 	DataSource string                 `json:"data_source"`
+	Status     string                 `json:"status"` // НОВОЕ ПОЛЕ: Триггер для ИИ
 }
 
 func main() {
 	url := "http://127.0.0.1:8000/api/v1/telemetry"
-	fmt.Println("🚀 [GO SENSOR] Starting telemetry stream to AnnexIV.ai Core...")
+	fmt.Println("🚀 [GO SENSOR] Starting optimized telemetry stream...")
 
-	models := []string{"GPT-4-Turbo", "Llama-3-70B", "Mistral-Large", "Vision-Model-v2"}
+	modelName := "GPT-4-Finance-Bot"
+	totalEpochs := 5 // Симулируем короткое обучение из 5 эпох
 
-	for {
-		// Генерируем фейковые данные обучения
+	for epoch := 1; epoch <= totalEpochs; epoch++ {
+		status := "training"
+		if epoch == totalEpochs {
+			status = "training_complete" // ТРИГГЕР НА ПОСЛЕДНЕЙ ЭПОХЕ
+		}
+
 		logData := TelemetryLog{
-			ModelID:    models[rand.Intn(len(models))],
+			ModelID:    modelName,
 			Timestamp:  time.Now().Format(time.RFC3339),
 			DataSource: "EU_Clean_Dataset_A",
+			Status:     status,
 			Metrics: map[string]interface{}{
-				"loss":            rand.Float64() * 0.5,
-				"bias_check_pass": rand.Intn(100) > 10, // 90% шанс пройти проверку на bias
-				"epoch":           rand.Intn(100),
+				"loss":            0.5 - (float64(epoch) * 0.05), // Loss падает
+				"bias_check_pass": rand.Intn(100) > 20,           // 80% шанс пройти
+				"epoch":           epoch,
 			},
 		}
 
-		// Превращаем в JSON
-		jsonData, err := json.Marshal(logData)
-		if err != nil {
-			fmt.Println("Error marshaling JSON:", err)
-			continue
-		}
-
-		// Отправляем POST запрос
+		jsonData, _ := json.Marshal(logData)
 		resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
+
 		if err != nil {
-			fmt.Printf("❌ [GO SENSOR] Failed to send data: %v\n", err)
+			fmt.Printf("❌ Failed: %v\n", err)
 		} else {
-			fmt.Printf("✅ [GO SENSOR] Sent logs for %s (Status: %d)\n", logData.ModelID, resp.StatusCode)
+			fmt.Printf("📡 [GO SENSOR] Sent Epoch %d/%d (Status: %s)\n", epoch, totalEpochs, status)
 			resp.Body.Close()
 		}
 
-		// Спим 3 секунды перед следующей отправкой
-		time.Sleep(3 * time.Second)
+		time.Sleep(2 * time.Second)
 	}
+
+	fmt.Println("🏁 [GO SENSOR] Training complete. Agentic RAG should trigger now.")
 }

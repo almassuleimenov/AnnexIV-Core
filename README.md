@@ -103,3 +103,36 @@ npm run dev
 Пункт 2(g): Система фиксирует "метрики валидации и тестирования", создавая неизменяемый отчет.
 
 Решение полностью готово к пилотированию в рамках Regulatory Sandboxes (Статья 57).
+
+Структура
+```
+AnnexIV.ai
+├─ 1_solana_program
+│  ├─ Anchor.toml
+│  └─ programs
+│     └─ annex_iv_registry
+│        ├─ Cargo.lock
+│        ├─ Cargo.toml
+│        └─ src
+│           └─ lib.rs
+├─ 2_backend_ai
+│  ├─ app
+│  │  ├─ ai_agents
+│  │  │  ├─ analyzer.py
+│  │  │  └─ decision.py
+│  │  ├─ blockchain
+│  │  │  └─ solana_tx.py
+│  │  ├─ main.py
+│  │  └─ storage
+│  │     └─ arweave_mock.py
+│  ├─ id.json
+│  ├─ poetry.lock
+│  └─ pyproject.toml
+├─ 3_frontend_dashboard
+├─ 4_sensor_go
+│  ├─ go.mod
+│  ├─ main.go
+│  └─ mock_data.json
+└─ README.md
+
+```
