@@ -53,14 +53,15 @@ GROQ_API_KEY=your_groq_key
 API_KEY=your_pinata_api_key
 SECRET_KEY=your_pinata_secret_key
 ```
-Шаг 2: Запуск локального блокчейна и смарт-контракта (WSL/Linux)
+**Шаг 2: Запуск локального блокчейна и смарт-контракта (WSL/Linux)**
+> ⚠️ Requires WSL2 on Windows or native Linux/macOS
 ```
 cd 1_solana_program
 solana-test-validator --reset --ledger ~/test-ledger
 # В новой вкладке:
 solana program deploy target/deploy/annex_iv_registry.so
 ```
-Шаг 3: Запуск AI Бэкенда
+**Шаг 3: Запуск AI Бэкенда**
 ```
 cd 2_backend_ai
 python -m venv venv
@@ -68,13 +69,13 @@ source venv/bin/activate  # Для Windows: venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
-Шаг 4: Запуск Frontend Дашборда
+**Шаг 4: Запуск Frontend Дашборда**
 ```
 cd 3_frontend_dashboard
 npm install
 npm run dev
 ```
-Шаг 5: ДЕМОНСТРАЦИЯ (Live Machine Learning)
+**Шаг 5: ДЕМОНСТРАЦИЯ (Live Machine Learning)**
 Откройте дашборд (http://localhost:3000). В новом терминале запустите обучение модели кредитного скоринга:
 ```
 python demo_ml_training.py
