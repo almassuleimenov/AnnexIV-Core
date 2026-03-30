@@ -10,7 +10,7 @@ import json
 
 # Импортируем наши новые модули
 from app.blockchain.solana_tx import send_audit_record
-from app.storage.arweave_mock import upload_to_decentralized_storage
+from app.storage.ipfs_storage import upload_to_decentralized_storage
 from app.ai_agents.decision import evaluate_compliance
 
 app = FastAPI(title="AnnexIV AI Compliance Core", version="3.0.0")

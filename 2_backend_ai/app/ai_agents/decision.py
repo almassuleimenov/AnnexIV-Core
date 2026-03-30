@@ -49,7 +49,7 @@ def evaluate_compliance(logs: list, cid_hash: str) -> dict:
             response_format={
                 "type": "json_object"
             },  # 🔥 Магия Groq: он 100% вернет чистый JSON
-            temperature=0.1,  # Делаем ИИ максимально строгим и логичным (без креатива)
+            temperature=0.0,  # Делаем ИИ максимально строгим и логичным (без креатива)
         )
 
         # Парсим ответ
