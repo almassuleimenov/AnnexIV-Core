@@ -91,9 +91,10 @@ python demo_ml_training.py
 ## 🗺️ Architecture: MVP vs. Roadmap (v2.0)
 Мы верим в радикальную прозрачность. Текущий статус проекта (Decentrathon 5.0):
 
-Feature	Hackathon MVP (Current)	Production Mainnet (v2.0)
-Data Ingestion	Live Python SDK (scikit-learn) + Go-Sensor	TEE / Intel SGX Enclaves for Hardware-level ML signing
-Trust Evaluation	Agentic RAG (Groq Llama 3.3) JSON processing	MLflow Webhooks integration
-File Storage	IPFS (Pinata) Real Web3 Storage	Irys / Arweave Mainnet upload for permanent persistence
-On-Chain Storage	Direct PDA state updates (Solana Devnet)	Light Protocol ZK Compression (Groth16 proofs)
-Legal Output	One-click PDF Certificate Generation	Integration with EU Regulatory Sandboxes APIs
+| Feature | Hackathon MVP (Current) | Production Mainnet (v2.0) |
+| :--- | :--- | :--- |
+| **Data Ingestion** | Live Python SDK (`scikit-learn`) + Go-Sensor | TEE / Intel SGX Enclaves for Hardware-level ML signing |
+| **Trust Evaluation** | Agentic RAG (Groq Llama 3.3) JSON processing | MLflow Webhooks integration |
+| **File Storage** | **IPFS (Pinata) Real Web3 Storage** | Irys / Arweave Mainnet upload for permanent persistence |
+| **On-Chain Storage** | Direct PDA state updates (Solana Devnet) | Light Protocol ZK Compression (Groth16 proofs) |
+| **Legal Output** | One-click PDF Certificate Generation | Integration with EU Regulatory Sandboxes APIs |
