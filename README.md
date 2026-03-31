@@ -1,6 +1,6 @@
 # AnnexIV-Solana-Core: Автономный комплаенс и архитектура доверия для эры ИИ 🛡️
 <p align="center">
-  <img src="assets/logo.jpg" alt="AnnexIV Logo" width="400">
+  <img src="assets/logo.svg" alt="AnnexIV Logo" width="400">
 </p>
 
 <h1 align="center">AnnexIV-Solana-Core</h1>
