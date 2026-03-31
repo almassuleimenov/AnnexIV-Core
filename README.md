@@ -9,13 +9,15 @@
   <strong>The Infrastructure Standard for AI Compliance on Solana</strong>
 </p>
 
-🌟 **[Pitch Deck (Презентация)](#)** | 🎥 **[Live Demo Video](#)** 
+🌟 **[Pitch Deck](#)** | 🎥 **[Live Demo Video](#)**
 [![Status](https://img.shields.io/badge/Status-Hackathon_MVP-blue?style=flat)](#)
 [![Solana](https://img.shields.io/badge/Solana-Blockchain-14F195?style=flat&logo=solana&logoColor=white)](#)
 [![IPFS](https://img.shields.io/badge/IPFS-Web3_Storage-65C2CB?style=flat&logo=ipfs&logoColor=white)](#)
 [![FastAPI](https://img.shields.io/badge/FastAPI-AI_Core-009688?style=flat&logo=fastapi&logoColor=white)](#)
+[![Groq](https://img.shields.io/badge/Groq-Llama_3.3-F55036?style=flat)](#)
 [![Next.js](https://img.shields.io/badge/Next.js-Dashboard-000000?style=flat&logo=next.js&logoColor=white)](#)
 [![Rust](https://img.shields.io/badge/Rust-Smart_Contract-000000?style=flat&logo=rust&logoColor=white)](#)
+[![Docker](https://img.shields.io/badge/Docker-Production_Ready-2496ED?style=flat&logo=docker&logoColor=white)](#)
 
 ## 1. Elevator Pitch 🚀
 **AnnexIV-Solana-Core** is an infrastructure standard for automated regulatory compliance under the **EU AI Act**. We leverage the high-performance Solana network and decentralized IPFS storage to create an immutable audit trail for AI model training and deployment.
