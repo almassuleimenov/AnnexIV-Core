@@ -1,0 +1,31 @@
+services:
+  # AI & Blockchain API Backend
+  annex_backend:
+    platform: linux/amd64
+    build: 
+      context: ./2_backend_ai
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env # 🎯 ИСПРАВЛЕНО: Теперь он смотрит в корень проекта
+    networks:
+      - annex_network
+    restart: unless-stopped
+
+  # Compliance Dashboard Frontend
+  annex_frontend:
+    build: 
+      context: ./3_frontend_dashboard
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://annex_backend:8000
+    depends_on:
+      - annex_backend
+    networks:
+      - annex_network
+    restart: unless-stopped
+
+networks:
+  annex_network:
+    driver: bridge
