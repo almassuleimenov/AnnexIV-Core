@@ -1,6 +1,7 @@
 import time
 import requests
 import warnings
+import random
 import numpy as np
 from datetime import datetime, timezone
 from sklearn.neural_network import MLPClassifier
@@ -15,23 +16,38 @@ API_URL = "http://127.0.0.1:8000/api/v1/telemetry"
 print("🚀 Инициализация AnnexIV.ai SDK...")
 print("📊 Подготовка датасета: Кредитный скоринг (Credit Risk Assessment)...")
 
+# 1. Убрали random_state везде. Теперь данные и веса каждый раз УНИКАЛЬНЫЕ!
 X, y = make_classification(n_samples=1000, n_features=20)
-model = MLPClassifier(hidden_layer_sizes=(16, 8), max_iter=1, warm_start=True, random_state=42)
+model = MLPClassifier(hidden_layer_sizes=(16, 8), max_iter=1, warm_start=True)
 
 print("⚙️ Начинаем процесс обучения (Training Loop)...\n")
+
+# 2. 🔥 ВЫБИРАЕМ СЛУЧАЙНЫЙ СЦЕНАРИЙ ДЛЯ ДЕМО (50% шанс на успех, 50% на провал)
+is_bad_scenario = random.choice([True, False])
+
+if is_bad_scenario:
+    print("🕵️ Скрытый сценарий: 🔴 КРИТИЧЕСКАЯ ПРЕДВЗЯТОСТЬ (Ожидайте Red Alert после 15 эпохи)")
+else:
+    print("🕵️ Скрытый сценарий: 🟢 УСПЕШНЫЙ КОМПЛАЕНС (Ожидайте Trust Score > 80)")
+print("-" * 60)
 
 for epoch in range(1, 31):
     model.fit(X, y)
     current_loss = float(model.loss_)
     
-    bias_score = float(np.random.uniform(0.01 + epoch * 0.03, 
-                                      0.05 + epoch * 0.03))
+    # 3. Динамическая генерация метрик предвзятости в зависимости от сценария
+    if is_bad_scenario and epoch > 15:
+        # Катастрофа: модель начинает дискриминировать клиентов (Bias скачет до 85-95%)
+        bias_score = float(np.random.uniform(0.85, 0.95))
+    else:
+        # Нормальный ход обучения: легкий, допустимый шум (Bias 1-8%)
+        bias_score = float(np.random.uniform(0.01, 0.08))
 
     payload = {
         "model_id": "Finance-Credit-Model-v1",
-        "timestamp": datetime.now(timezone.utc).isoformat(), # Исправлено предупреждение со временем
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "data_source": "synthetic_credit_dataset",
-        "status": "training" if epoch < 30 else "training_complete", # Идеальное совпадение с Go
+        "status": "training" if epoch < 30 else "training_complete",
         "metrics": {
             "epoch": epoch,
             "loss_rate": round(current_loss, 4),

@@ -11,6 +11,7 @@ interface AuditLog {
   model_id: string;
   trust_score: number;
   decision: string;
+  comprehensive_analysis?: string;
   cid_hash: string;
   tx_sig: string;
 }
@@ -40,7 +41,7 @@ export default function Dashboard() {
 
   const isDanger = logs.length > 0 && logs[0].trust_score < 80;
 
-  // 📄 ФУНКЦИЯ ГЕНЕРАЦИИ PDF-ОТЧЕТА
+  // 📄 ГЕНЕРАЦИЯ PDF НА ОСНОВЕ ГЛУБОКОГО АНАЛИЗА ИИ
   const downloadPDF = (log: AuditLog) => {
     const doc = new jsPDF();
     const isApproved = log.trust_score >= 80;
@@ -48,7 +49,7 @@ export default function Dashboard() {
     // Шапка документа
     doc.setFontSize(22);
     doc.setTextColor(isApproved ? 34 : 220, isApproved ? 197 : 38, isApproved ? 94 : 38);
-    doc.text("AnnexIV.ai - Compliance Audit Report", 14, 20);
+    doc.text("AnnexIV - AI Legal Audit Report", 14, 20);
 
     doc.setFontSize(10);
     doc.setTextColor(100);
@@ -65,45 +66,45 @@ export default function Dashboard() {
     doc.setFontSize(11);
     doc.text(`Model ID: ${log.model_id}`, 14, 56);
     doc.text(`Audit Timestamp: ${log.time}`, 14, 62);
+    doc.text(`Overall Trust Score: ${log.trust_score} / 100`, 14, 68);
 
-    // 2. Вердикт ИИ
+    // 2. ГЛУБОКИЙ АНАЛИЗ ОТ ИИ (Agentic RAG)
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
-    doc.text("2. AI Agent Verdict & Risk Assessment", 14, 76);
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "normal");
-    doc.text(`Trust Score: ${log.trust_score} / 100`, 14, 84);
+    doc.text("2. Agentic RAG Analysis (Llama 3.3)", 14, 82);
     
-    if (isApproved) {
-      doc.setTextColor(34, 197, 94);
-      doc.text("Compliance Status: COMPLIANT (Low Risk)", 14, 90);
-    } else {
-      doc.setTextColor(220, 38, 38);
-      doc.text("Compliance Status: HIGH RISK DETECTED (Action Required)", 14, 90);
-    }
-
-    doc.setTextColor(0);
     doc.setFontSize(10);
-    const splitDecision = doc.splitTextToSize(`Agent Rationale: ${log.decision}`, 180);
-    doc.text(splitDecision, 14, 98);
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(40);
+    
+    // Берем умный текст от ИИ или заглушку
+    const analysisText = log.comprehensive_analysis || log.decision;
+    
+    // Разбиваем длинный текст от ИИ на строки, чтобы они влезали на лист А4
+    const splitAnalysis = doc.splitTextToSize(analysisText, 180);
+    doc.text(splitAnalysis, 14, 90);
 
     // 3. Криптографические доказательства (Блокчейн)
-    const yAfterText = 98 + (splitDecision.length * 5) + 10;
+    // Динамически вычисляем отступ вниз в зависимости от того, сколько текста написал ИИ
+    const yAfterText = 90 + (splitAnalysis.length * 5) + 15;
+    
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
-    doc.text("3. Cryptographic Proofs (Root of Trust)", 14, yAfterText);
+    doc.setTextColor(0);
+    doc.text("3. On-Chain Proofs (Solana & IPFS)", 14, yAfterText);
+    
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
-    doc.text(`Solana Transaction Signature: ${log.tx_sig}`, 14, yAfterText + 8);
-    doc.text(`IPFS Immutable Storage (CID): ${log.cid_hash}`, 14, yAfterText + 14);
+    doc.text(`Solana Tx Signature: ${log.tx_sig}`, 14, yAfterText + 8);
+    doc.text(`IPFS CID: ${log.cid_hash}`, 14, yAfterText + 14);
 
+    doc.setFontSize(9);
     doc.setFont("helvetica", "italic");
     doc.setTextColor(150);
     doc.text("Note: This document is derived directly from immutable on-chain records.", 14, yAfterText + 26);
-    doc.text("Any manual tampering with this file invalidates the cryptographic hash.", 14, yAfterText + 31);
 
-    // Сохранение файла
-    doc.save(`AnnexIV_Report_${log.model_id}.pdf`);
+    // Сохраняем
+    doc.save(`AnnexIV_Legal_Report_${log.model_id}.pdf`);
   };
 
   return (

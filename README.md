@@ -1,4 +1,13 @@
 # AnnexIV-Solana-Core: Автономный комплаенс и архитектура доверия для эры ИИ 🛡️
+<p align="center">
+  <img src="assets/logo.jpg" alt="AnnexIV Logo" width="400">
+</p>
+
+<h1 align="center">AnnexIV-Solana-Core</h1>
+
+<p align="center">
+  <strong>The Infrastructure Standard for AI Compliance on Solana</strong>
+</p>
 
 🌟 **[Pitch Deck (Презентация)](#)** | 🎥 **[Live Demo Video](#)** [![Status](https://img.shields.io/badge/Status-Hackathon_MVP-blue?style=flat)](#)
 [![Solana](https://img.shields.io/badge/Solana-Blockchain-14F195?style=flat&logo=solana&logoColor=white)](#)

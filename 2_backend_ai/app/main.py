@@ -55,6 +55,7 @@ async def finalize_audit(model_id: str):
         "environment_id": "FIPS-140-3-L3-ID-99 (MVP Simulated)",
         "telemetry_data": logs,
     }
+    
 
     # 1. DATA AVAILABILITY: Отправляем ЮРИДИЧЕСКИ ЗНАЧИМЫЙ объект в Arweave
     # (Не забудь обновить функцию upload_to_decentralized_storage, чтобы она принимала dict, а не list)
@@ -82,6 +83,7 @@ async def finalize_audit(model_id: str):
                     "model_id": model_id,
                     "trust_score": judgment["trust_score"],
                     "decision": judgment["decision"],
+                    "comprehensive_analysis": judgment.get("comprehensive_analysis", "No detailed analysis available."),
                     "cid_hash": cid_hash,
                     "tx_sig": tx_sig,
                 }
