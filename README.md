@@ -14,6 +14,7 @@
 [![Solana](https://img.shields.io/badge/Solana-Blockchain-14F195?style=flat&logo=solana&logoColor=white)](#)
 [![IPFS](https://img.shields.io/badge/IPFS-Web3_Storage-65C2CB?style=flat&logo=ipfs&logoColor=white)](#)
 [![FastAPI](https://img.shields.io/badge/FastAPI-AI_Core-009688?style=flat&logo=fastapi&logoColor=white)](#)
+[![Go](https://img.shields.io/badge/Go-Telemetry_Parser-00ADD8?style=flat&logo=go&logoColor=white)](#)
 [![Groq](https://img.shields.io/badge/Groq-Llama_3.3-F55036?style=flat)](#)
 [![Next.js](https://img.shields.io/badge/Next.js-Dashboard-000000?style=flat&logo=next.js&logoColor=white)](#)
 [![Rust](https://img.shields.io/badge/Rust-Smart_Contract-000000?style=flat&logo=rust&logoColor=white)](#)
