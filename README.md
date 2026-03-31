@@ -9,7 +9,8 @@
   <strong>The Infrastructure Standard for AI Compliance on Solana</strong>
 </p>
 
-🌟 **[Pitch Deck (Презентация)](#)** | 🎥 **[Live Demo Video](#)** [![Status](https://img.shields.io/badge/Status-Hackathon_MVP-blue?style=flat)](#)
+🌟 **[Pitch Deck (Презентация)](#)** | 🎥 **[Live Demo Video](#)** 
+[![Status](https://img.shields.io/badge/Status-Hackathon_MVP-blue?style=flat)](#)
 [![Solana](https://img.shields.io/badge/Solana-Blockchain-14F195?style=flat&logo=solana&logoColor=white)](#)
 [![IPFS](https://img.shields.io/badge/IPFS-Web3_Storage-65C2CB?style=flat&logo=ipfs&logoColor=white)](#)
 [![FastAPI](https://img.shields.io/badge/FastAPI-AI_Core-009688?style=flat&logo=fastapi&logoColor=white)](#)
