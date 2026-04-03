@@ -11,7 +11,7 @@ from sklearn.exceptions import ConvergenceWarning
 # 🤫 Глушим предупреждения
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
-API_URL = "http://127.0.0.1:8000/api/v1/telemetry"
+API_URL = "http://127.0.0.1:8080/api/v1/telemetry"
 
 print("🚀 Инициализация AnnexIV.ai SDK...")
 print("📊 Подготовка датасета: Кредитный скоринг (Credit Risk Assessment)...")
@@ -23,12 +23,7 @@ model = MLPClassifier(hidden_layer_sizes=(16, 8), max_iter=1, warm_start=True)
 print("⚙️ Начинаем процесс обучения (Training Loop)...\n")
 
 # 2. 🔥 ВЫБИРАЕМ СЛУЧАЙНЫЙ СЦЕНАРИЙ ДЛЯ ДЕМО (50% шанс на успех, 50% на провал)
-is_bad_scenario = random.choice([True, False])
-
-if is_bad_scenario:
-    print("🕵️ Скрытый сценарий: 🔴 КРИТИЧЕСКАЯ ПРЕДВЗЯТОСТЬ (Ожидайте Red Alert после 15 эпохи)")
-else:
-    print("🕵️ Скрытый сценарий: 🟢 УСПЕШНЫЙ КОМПЛАЕНС (Ожидайте Trust Score > 80)")
+is_bad_scenario = True 
 print("-" * 60)
 
 for epoch in range(1, 31):
@@ -54,6 +49,7 @@ for epoch in range(1, 31):
             "bias_score": round(bias_score, 4)
         }
     }
+    print(f"🔎 DEBUG PAYLOAD: {payload}")
 
     try:
         response = requests.post(API_URL, json=payload)
@@ -63,7 +59,7 @@ for epoch in range(1, 31):
         elif response.status_code == 200:
             print(f"Epoch {epoch:02d}/30 | Loss: {current_loss:.4f} | Bias: {bias_score:.4f} | AnnexIV Sync: ✅")
         else:
-            print(f"Epoch {epoch:02d}/30 | Странный статус: {response.status_code}")
+            print(f"Epoch {epoch:02d}/30 | Странный статус: {response.status_code} | ПРИЧИНА: {response.text}")
             
     except Exception as e:
         print(f"Epoch {epoch:02d}/30 | AnnexIV Sync: ❌ Ошибка связи с сервером")

@@ -1,0 +1,14 @@
+cd /mnt/d/Hackathon/AnnexIV.ai/1_solana_program
+solana-test-validator --reset
+solana program deploy target/deploy/annex_iv_registry.so = отвечает за токен 
+solana-test-validator --reset --ledger ~/test-ledger
+
+cd D:\Hackathon\AnnexIV.ai\2_backend_ai
+uvicorn app.main:app --port 8080 --reload
+
+cd D:\Hackathon\AnnexIV.ai\4_sensor_go
+go run main.go
+
+python demo_ml_training.py
+cd D:\Hackathon\AnnexIV.ai\3_frontend_dashboard
+npm run dev 

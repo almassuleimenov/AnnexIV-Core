@@ -14,7 +14,7 @@ PROGRAM_ID = Pubkey.from_string("H8Jq46Saqk5EGmFGiCDuzbZr27i2nZuxbPkFvZx59kXp")
 
 async def send_audit_record(model_id: str, trust_score: int, decision: str):
     # 1. Подключаемся к твоей локальной сети Solana (которую ты поднял)
-    client = AsyncClient("http://localhost:8899", commitment=Confirmed)
+    client = AsyncClient("http://172.21.123.177:8899", commitment=Confirmed)
 
     # 2. Загружаем твой кошелек (payer), который будет платить комиссию
     wallet_path = Path(__file__).resolve().parent.parent.parent / "id.json"
@@ -74,7 +74,9 @@ async def send_audit_record(model_id: str, trust_score: int, decision: str):
         return str(tx_sig), str(record_keypair.pubkey())
 
     except Exception as e:
-        print(f"❌ Ошибка при отправке транзакции: {e}")
+        import traceback
+        print(f"❌ Ошибка при отправке транзакции:")
+        print(traceback.format_exc())
     finally:
         await client.close()
 

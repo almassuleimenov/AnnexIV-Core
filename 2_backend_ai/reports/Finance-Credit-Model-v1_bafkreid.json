@@ -1,0 +1,339 @@
+{
+    "timestamp_rfc3339": "2026-04-03T20:41:58.368928Z",
+    "model_version_hash": "ed4ebd9601d074babbb4bf7698d303b32611714adbbc22041e77e2b7e60c9cc5",
+    "previous_hash": "poseidon:genesis_block_00000000",
+    "design_rationale": "Annex IV 2b: Optimization for accuracy vs bias trade-off",
+    "environment_id": "FIPS-140-3-L3-ID-99 (MVP Simulated)",
+    "telemetry_data": [
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:28.948595+00:00",
+            "metrics": {
+                "epoch": 1,
+                "loss_rate": 1.0029,
+                "bias_score": 0.0261
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:29.966295+00:00",
+            "metrics": {
+                "epoch": 2,
+                "loss_rate": 0.9606,
+                "bias_score": 0.0352
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:30.979293+00:00",
+            "metrics": {
+                "epoch": 3,
+                "loss_rate": 0.9213,
+                "bias_score": 0.0654
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:31.991949+00:00",
+            "metrics": {
+                "epoch": 4,
+                "loss_rate": 0.8884,
+                "bias_score": 0.0502
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:33.005502+00:00",
+            "metrics": {
+                "epoch": 5,
+                "loss_rate": 0.8572,
+                "bias_score": 0.0707
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:34.020272+00:00",
+            "metrics": {
+                "epoch": 6,
+                "loss_rate": 0.8297,
+                "bias_score": 0.0343
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:35.036345+00:00",
+            "metrics": {
+                "epoch": 7,
+                "loss_rate": 0.8059,
+                "bias_score": 0.0393
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:36.056420+00:00",
+            "metrics": {
+                "epoch": 8,
+                "loss_rate": 0.7846,
+                "bias_score": 0.0309
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:37.085236+00:00",
+            "metrics": {
+                "epoch": 9,
+                "loss_rate": 0.7643,
+                "bias_score": 0.0585
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:38.103560+00:00",
+            "metrics": {
+                "epoch": 10,
+                "loss_rate": 0.7465,
+                "bias_score": 0.0799
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:39.115095+00:00",
+            "metrics": {
+                "epoch": 11,
+                "loss_rate": 0.7315,
+                "bias_score": 0.0467
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:40.126452+00:00",
+            "metrics": {
+                "epoch": 12,
+                "loss_rate": 0.7165,
+                "bias_score": 0.0238
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:41.139888+00:00",
+            "metrics": {
+                "epoch": 13,
+                "loss_rate": 0.7036,
+                "bias_score": 0.049
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:42.156460+00:00",
+            "metrics": {
+                "epoch": 14,
+                "loss_rate": 0.6908,
+                "bias_score": 0.0386
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:43.173086+00:00",
+            "metrics": {
+                "epoch": 15,
+                "loss_rate": 0.6797,
+                "bias_score": 0.0131
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:44.186874+00:00",
+            "metrics": {
+                "epoch": 16,
+                "loss_rate": 0.6681,
+                "bias_score": 0.8716
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:45.202661+00:00",
+            "metrics": {
+                "epoch": 17,
+                "loss_rate": 0.6579,
+                "bias_score": 0.8966
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:46.213644+00:00",
+            "metrics": {
+                "epoch": 18,
+                "loss_rate": 0.6471,
+                "bias_score": 0.9245
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:47.224324+00:00",
+            "metrics": {
+                "epoch": 19,
+                "loss_rate": 0.6363,
+                "bias_score": 0.8924
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:48.239161+00:00",
+            "metrics": {
+                "epoch": 20,
+                "loss_rate": 0.6257,
+                "bias_score": 0.9071
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:49.251324+00:00",
+            "metrics": {
+                "epoch": 21,
+                "loss_rate": 0.615,
+                "bias_score": 0.8584
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:50.262600+00:00",
+            "metrics": {
+                "epoch": 22,
+                "loss_rate": 0.604,
+                "bias_score": 0.8573
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:51.273350+00:00",
+            "metrics": {
+                "epoch": 23,
+                "loss_rate": 0.5926,
+                "bias_score": 0.8775
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:52.286094+00:00",
+            "metrics": {
+                "epoch": 24,
+                "loss_rate": 0.5815,
+                "bias_score": 0.8811
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:53.302291+00:00",
+            "metrics": {
+                "epoch": 25,
+                "loss_rate": 0.5699,
+                "bias_score": 0.8768
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:54.315487+00:00",
+            "metrics": {
+                "epoch": 26,
+                "loss_rate": 0.5579,
+                "bias_score": 0.8721
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:55.325888+00:00",
+            "metrics": {
+                "epoch": 27,
+                "loss_rate": 0.546,
+                "bias_score": 0.8782
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:56.339057+00:00",
+            "metrics": {
+                "epoch": 28,
+                "loss_rate": 0.5335,
+                "bias_score": 0.9225
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:57.351707+00:00",
+            "metrics": {
+                "epoch": 29,
+                "loss_rate": 0.5211,
+                "bias_score": 0.8575
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training"
+        },
+        {
+            "model_id": "Finance-Credit-Model-v1",
+            "timestamp": "2026-04-03T20:41:58.364094+00:00",
+            "metrics": {
+                "epoch": 30,
+                "loss_rate": 0.5083,
+                "bias_score": 0.9269
+            },
+            "data_source": "synthetic_credit_dataset",
+            "status": "training_complete"
+        }
+    ]
+}

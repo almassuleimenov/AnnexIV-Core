@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ShieldCheck, ShieldAlert, Cpu, Link as LinkIcon, HardDrive, Server, Activity, FileDown } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import jsPDF from 'jspdf'; // ИМПОРТ ГЕНЕРАТОРА PDF
+import jsPDF from 'jspdf'; 
 
 interface AuditLog {
   time: string;
@@ -21,7 +21,8 @@ export default function Dashboard() {
 
   const fetchLogs = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/api/history');
+      // ПОРТ ИЗМЕНЕН НА 8080
+      const response = await axios.get('http://127.0.0.1:8080/api/history');
       setLogs(response.data.logs);
     } catch (error) {
       console.error("Ошибка при получении данных:", error);
@@ -130,7 +131,7 @@ export default function Dashboard() {
           </p>
         </div>
         
-        {/* НОВАЯ ПАНЕЛЬ С КНОПКОЙ PDF */}
+        {/* ПАНЕЛЬ С КНОПКОЙ PDF */}
         <div className="flex flex-col sm:flex-row items-center gap-3">
           {logs.length > 0 && (
             <button 
@@ -252,7 +253,6 @@ export default function Dashboard() {
                   const isApproved = log.trust_score >= 80;
                   return (
                     <tr key={i} className={`transition-colors group ${i === 0 && isDanger ? 'bg-red-950/30' : 'hover:bg-[#1a1a1a]'}`}>
-                      {/* НОВАЯ КНОПКА СКАЧИВАНИЯ В ТАБЛИЦЕ */}
                       <td className="p-4">
                         <button 
                           onClick={() => downloadPDF(log)}
