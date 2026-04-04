@@ -36,6 +36,13 @@ We didn't just build a concept; we shipped an End-to-End process:
 2. 🔗 **100% Web3 Proof:** No local mocks. All AI safety JSON reports are automatically hashed and uploaded to the global decentralized **IPFS network via Pinata**, returning a cryptographic CID.
 3. 🛑 **System Lockdown (Red Alert):** The frontend dashboard reacts instantly to the AI judge's verdict. If the `Trust Score < 80` (discrimination detected), the system triggers a visual lockdown and records the failure on-chain.
 4. 📄 **Legal PDF Generation:** The bridge between Web3 and compliance lawyers. The built-in generator allows officers to download a ready-made PDF report containing all cryptographic proofs (IPFS CID and Solana Tx) for EU regulatory bodies.
+### How we meet the Hackathon Challenge (Autonomous On-Chain Logic)
+1. 🧠 **AI Component:** Llama 3.3 (Groq) autonomously analyzes intercepted training telemetry (Loss/Bias) in real-time.
+2. ⚖️ **Decision Making:** The Agentic RAG acts as a judge, independently issuing a "Trust Score" and making a definitive "Pass/Fail" compliance decision without human intervention.
+3. ⚡ **On-Chain Action:** If the AI detects discrimination (Trust Score < 80), it autonomously triggers a transaction to the Solana program.
+4. 🔒 **State Change:** The Solana smart contract updates its state, permanently recording the restriction and locking the dangerous model out of production.
+
+---
 
 ---
 
@@ -56,7 +63,7 @@ Deploying the automated compliance system:
 
 **Step 1: Environment Setup**
 ```bash
-git clone [https://github.com/almassuleimenov/AnnexIV-Core.git](https://github.com/almassuleimenov/AnnexIV-Core.git)
+git clone https://github.com/Sulemenov/AnnexIV-Core.git
 cd AnnexIV-Core
 ```
 Create a .env file in the 2_backend_ai folder and add your keys:
@@ -94,12 +101,11 @@ python demo_ml_training.py
 ```
 Watch the telemetry stream to the dashboard. Around epoch 15, the model will simulate "bias drift," triggering the AI agent to slash the Trust Score and initiate a System Lockdown.
 
-## 5. Compliance Standard: Соответствие Annex IV 🇪🇺
+## 5. Compliance Standard: EU AI Act Annex IV Alignment 🇪🇺
 This project directly implements the technical documentation requirements outlined in Annex IV of the EU AI Act:
 
-*Point 2(b): RAG agents automatically document the logic of algorithms and key assumptions.
-
-*Point 2(g): The system captures "validation and testing metrics" (Loss/Bias) dynamically during the .fit() execution, generating an immutable audit trail.
+* **Point 2(b):** RAG agents automatically document the logic of algorithms and key assumptions.
+* **Point 2(g):** The system captures "validation and testing metrics" (Loss/Bias) dynamically during the `.fit()` execution, generating an immutable audit trail.
 
 ## 🗺️ Architecture: MVP vs. Roadmap (v2.0)
 We believe in radical transparency. Current project status (Decentrathon 5.0):
