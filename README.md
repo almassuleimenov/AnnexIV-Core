@@ -44,8 +44,6 @@ We didn't just build a concept; we shipped an End-to-End process:
 
 ---
 
----
-
 ## 3. Architecture & Tech Stack 🛠️
 
 | Component | Technology Stack | Role in the System |
